@@ -5,7 +5,8 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '7.0.4'
+gem 'webrick', '~> 1.7'
 
 gem 'ey_config'
 gem 'rails_autolink'

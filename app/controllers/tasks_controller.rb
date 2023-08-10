@@ -15,9 +15,11 @@ class TasksController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
-    raw_params = params[:task].is_a?(String) ? JSON.parse(params[:task]) : params[:task]
-    task_params = ActionController::Parameters.new(raw_params)
-    @task = @list.tasks.new(task_params.permit(:name))
+    #raw_params = params[:task].is_a?(String) ? JSON.parse(params[:task]) : params[:task]
+    #task_params = ActionController::Parameters.new(raw_params)
+    #@task = @list.tasks.new(task_params.permit(:name))
+    task_params = params.require(:task).permit(:done, :list_id, :name)
+    @task = Task.new(task_params.to_h)
     if @task.save
       status = "success"
       flash[:notice] = "Your task was created."

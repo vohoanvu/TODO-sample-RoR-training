@@ -58,12 +58,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Upload deployment package to S3
-        uses: aws-actions/amazon-s3-cp-action@v1
-        with:
-          source: myapp.zip
-          destination: s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/myapp.zip
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/myapp.zip
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v14
         with:

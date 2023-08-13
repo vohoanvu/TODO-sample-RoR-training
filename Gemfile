@@ -5,7 +5,7 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '7.0.4'
+gem 'rails', '~> 6.1'
 gem 'webrick', '~> 1.7'
 
 gem 'ey_config'
@@ -20,7 +20,7 @@ gem 'uglifier'
 
 platform :ruby do
   gem 'mysql2'
-  gem 'activerecord-postgis-adapter', '3.0.0.beta2'
+  gem 'activerecord-postgis-adapter', '~> 7.0'
 
   gem 'newrelic_rpm'
   gem 'unicorn'
@@ -55,7 +55,7 @@ platforms :jruby do
 end
 
 platform :rbx do
-  gem 'rubysl'
+  gem 'rubysl', '~> 3.1'
   gem 'rubysl-test-unit', :require => false
 end
 

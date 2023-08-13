@@ -48,8 +48,16 @@ jobs:
     needs: [test, lint] # Only run this job if the test and lint jobs pass
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Create deployment package
+        run: |
+          zip -r myapp.zip .
+      - name: Upload deployment package to S3
+        uses: aws-actions/amazon-s3-cp-action@v1
+        with:
+          source: myapp.zip
+          destination: s3://my-bucket/myapp.zip
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Deploy to AWS Elastic Beanstalk
       uses: einaregilsson/beanstalk-deploy@v14
       with:

@@ -22,8 +22,6 @@ jobs:
       # Add or replace dependency steps here
       - name: Clear local gem cache
         run: gem cleanup
-      - name: Install dependencies
-        run: bundle install --full-index
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:

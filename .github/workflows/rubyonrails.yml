@@ -13,15 +13,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      RAILS_ENV: production
-      DATABASE_URL: "postgres://vutodo:qW123456*@vudb.cncdwbpxex54.us-east-1.rds.amazonaws.com:5432/awseb-e-8d8yp622si-stack-awsebrdsdatabase-xb2btzr4zbwq"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       # Add or replace dependency steps here
-      - name: Clear local gem cache
-        run: gem cleanup
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:

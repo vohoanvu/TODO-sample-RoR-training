@@ -49,7 +49,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create deployment package
-        run: zip -r myapp.zip .
+        run: |
+          zip -r myapp.zip .
       - name: Upload deployment package to S3
         uses: aws-actions/amazon-s3-cp-action@v1
         with:
@@ -57,12 +58,12 @@ jobs:
           destination: s3://my-bucket/myapp.zip
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    - name: Deploy to AWS Elastic Beanstalk
-      uses: einaregilsson/beanstalk-deploy@v14
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: sampletodo # Replace with the name of your Elastic Beanstalk application
-        environment_name: Sampletodo-env.eba-ng8spwz7.us-east-1.elasticbeanstalk.com # Replace with the name of your Elastic Beanstalk environment
-        version_label: ${{ github.sha }}
-        region: us-east-1 # Replace with the AWS region where your Elastic Beanstalk environment is located
+      - name: Deploy to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v14
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: sampletodo # Replace with the name of your Elastic Beanstalk application
+          environment_name: Sampletodo-env.eba-ng8spwz7.us-east-1.elasticbeanstalk.com # Replace with the name of your Elastic Beanstalk environment
+          version_label: ${{ github.sha }}
+          region: us-east-1 # Replace with the AWS region where your Elastic Beanstalk environment is located

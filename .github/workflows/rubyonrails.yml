@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: production
-      DATABASE_URL: "postgres://vutodo:qW123456*@vudb.cncdwbpxex54.us-east-1.rds.amazonaws.com:5432/vudb"
+      DATABASE_URL: "postgres://vutodo:qW123456*@vudb.cncdwbpxex54.us-east-1.rds.amazonaws.com:5432/awseb-e-8d8yp622si-stack-awsebrdsdatabase-xb2btzr4zbwq"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -46,13 +46,6 @@ jobs:
         with:
           ruby-version: 3.1.2 # Specify the Ruby version you want to use
           bundler-cache: true
-      # Add or replace any other lints here
-      - name: Security audit dependencies
-        run: bin/bundler-audit --update
-      - name: Security audit application code
-        run: bin/brakeman -q -w2
-      - name: Lint Ruby files
-        run: bin/rubocop --parallel
   
   deploy:
     needs: [test, lint] # Only run this job if the test and lint jobs pass

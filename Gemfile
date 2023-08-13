@@ -7,6 +7,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 6.1'
 gem 'webrick', '~> 1.7'
+gem 'rgeo-activerecord', '7.0.1'
+gem 'kgio', '2.11.4'
+gem 'raindrops', '0.20.1'
+gem 'stringio', '3.0.8'
+gem 'nokogiri', '1.15.4'
+gem 'rgeo', '3.0.0'
+gem 'ffi', '1.15.5'
 
 gem 'ey_config'
 gem 'rails_autolink'
@@ -19,21 +26,21 @@ gem 'coffee-rails'
 gem 'uglifier'
 
 platform :ruby do
-  gem 'mysql2'
-  gem 'activerecord-postgis-adapter', '~> 7.0'
+  gem 'mysql2', '0.5.5'
+  gem 'activerecord-postgis-adapter', '7.1.1'
 
-  gem 'newrelic_rpm'
-  gem 'unicorn'
-  gem 'puma'
-  gem 'json'
+  gem 'newrelic_rpm', '9.3.1'
+  gem 'unicorn', '6.1.0'
+  gem 'puma', '6.3.0'
+  gem 'json', '2.6.3'
   gem 'minitest'
-  gem 'psych'
+  gem 'psych', '5.1.0'
   gem 'racc'
 end
 
 platform :ruby, :mswin, :mingw, :x64_mingw do
-  gem 'pg'
-  gem 'sqlite3'
+  gem 'pg', '1.5.3'
+  gem 'sqlite3', '1.6.3'
 end
 
 platform :mswin, :mingw, :x64_mingw do

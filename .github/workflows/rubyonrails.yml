@@ -59,7 +59,7 @@ jobs:
           aws-region: us-east-1
       - name: Upload deployment package to S3
         run: |
-          aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/myapp.zip
+          aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-1-225574881592/myapp.zip
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v14
         with:

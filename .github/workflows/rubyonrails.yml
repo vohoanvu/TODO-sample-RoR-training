@@ -61,12 +61,12 @@ jobs:
         run: |
           aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/myapp.zip
       - name: Deploy to AWS Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v14
+        uses: aws-actions/aws-elastic-beanstalk-deploy
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: sampletodo # Replace with the name of your Elastic Beanstalk application
-          environment_name: Sampletodo-env.eba-ng8spwz7.us-east-1.elasticbeanstalk.com # Replace with the name of your Elastic Beanstalk environment
+          application_name: todotest # Replace with the name of your Elastic Beanstalk application
+          environment_name: Todotest-env.eba-qaghuc3s.us-east-1.elasticbeanstalk.com # Replace with the name of your Elastic Beanstalk environment
           version_label: ${{ github.sha }}
           deployment_package: s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/myapp.zip
           region: us-east-1 # Replace with the AWS region where your Elastic Beanstalk environment is located

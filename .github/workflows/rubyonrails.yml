@@ -69,5 +69,5 @@ jobs:
           environment_name: Todotest-env # Replace with the name of your Elastic Beanstalk environment
           version_label: ${{ github.sha }}
           deployment_package: myapp.zip
-          use_existing_version_if_available: true
+          use_existing_version_if_available: false
           region: us-east-1 # Replace with the AWS region where your Elastic Beanstalk environment is located

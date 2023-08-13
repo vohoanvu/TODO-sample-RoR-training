@@ -157,6 +157,10 @@ GEM
       thor (~> 1.0)
     raindrops (0.20.1)
     rake (13.0.6)
+    rgeo (3.0.0)
+    rgeo-activerecord (7.0.1)
+      activerecord (>= 5.0)
+      rgeo (>= 1.0.0)
     rubysl-test-unit (1.0.0)
       minitest (~> 5.0)
     sass-rails (6.0.0)
@@ -212,6 +216,7 @@ DEPENDENCIES
   activerecord-postgis-adapter (= 7.1.1)
   coffee-rails
   ey_config
+  ffi (= 1.15.5)
   jdbc-mysql
   jdbc-postgres
   jdbc-sqlite3
@@ -221,17 +226,21 @@ DEPENDENCIES
   minitest
   mysql2 (= 0.5.5)
   newrelic_rpm (= 9.3.1)
+  nokogiri (= 1.15.4)
   pg (= 1.5.3)
   psych (= 5.1.0)
   puma (= 6.3.0)
   racc
   rails (~> 6.1)
   rails_autolink
+  rgeo (= 3.0.0)
+  rgeo-activerecord (= 7.0.1)
   rubysl (~> 3.1)
   rubysl-test-unit
   sass-rails
   simple_form
-  sqlite3
+  sqlite3 (= 1.6.3)
+  stringio (= 3.0.8)
   trinidad
   tzinfo-data
   uglifier

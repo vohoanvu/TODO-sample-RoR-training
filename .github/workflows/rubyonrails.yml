@@ -66,7 +66,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: todotest # Replace with the name of your Elastic Beanstalk application
-          environment_name: Todotest-env.eba-qaghuc3s.us-east-1.elasticbeanstalk.com # Replace with the name of your Elastic Beanstalk environment
+          environment_name: Todotest-env # Replace with the name of your Elastic Beanstalk environment
           version_label: ${{ github.sha }}
           deployment_package: myapp.zip
           region: us-east-1 # Replace with the AWS region where your Elastic Beanstalk environment is located

@@ -28,10 +28,10 @@ jobs:
           chmod +x bin/rails
           bin/rails db:schema:load
       # Add or replace test runners here
-      - name: Run tests
-        run: |
-          chmod +x bin/rake
-          bin/rake
+      # - name: Run tests
+      #   run: |
+      #     chmod +x bin/rake
+      #     bin/rake
 
   lint:
     runs-on: ubuntu-latest

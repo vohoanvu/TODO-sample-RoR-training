@@ -48,9 +48,8 @@ jobs:
     needs: [test, lint] # Only run this job if the test and lint jobs pass
     runs-on: ubuntu-latest
     steps:
-    - name: Create deployment package
-        run: |
-          zip -r myapp.zip .
+      - name: Create deployment package
+        run: zip -r myapp.zip .
       - name: Upload deployment package to S3
         uses: aws-actions/amazon-s3-cp-action@v1
         with:

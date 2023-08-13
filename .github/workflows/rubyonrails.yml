@@ -27,6 +27,8 @@ jobs:
         with:
           ruby-version: 3.1.2 # Specify the Ruby version you want to use
           bundler-cache: true
+      - name: Install dependencies
+        run: bundle install --full-index
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bin/rails db:schema:load

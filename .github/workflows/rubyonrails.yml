@@ -20,15 +20,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       # Add or replace dependency steps here
+      - name: Clear local gem cache
+        run: gem cleanup
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           ruby-version: 3.1.2 # Specify the Ruby version you want to use
           bundler-cache: true
-      - name: Clear local gem cache
-        run: gem cleanup
-      - name: Install dependencies
-        run: bundle install
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bin/rails db:schema:load

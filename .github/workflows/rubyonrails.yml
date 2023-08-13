@@ -61,7 +61,7 @@ jobs:
         uses: aws-actions/amazon-s3-cp-action@v1
         with:
           source: myapp.zip
-          destination: s3://my-bucket/myapp.zip
+          destination: s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/myapp.zip
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Deploy to AWS Elastic Beanstalk

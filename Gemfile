@@ -39,7 +39,7 @@ platform :ruby do
 end
 
 platform :ruby, :mswin, :mingw, :x64_mingw do
-  gem 'pg', '~> 0.18'
+  gem 'pg', '1.5.3'
   gem 'sqlite3', '1.6.3'
 end
 

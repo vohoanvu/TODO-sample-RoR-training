@@ -47,6 +47,9 @@ GEM
     activerecord (6.1.7.4)
       activemodel (= 6.1.7.4)
       activesupport (= 6.1.7.4)
+    activerecord-postgis-adapter (7.1.1)
+      activerecord (~> 6.1)
+      rgeo-activerecord (~> 7.0.0)
     activestorage (6.1.7.4)
       actionpack (= 6.1.7.4)
       activejob (= 6.1.7.4)
@@ -98,6 +101,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.19.0)
+    mysql2 (0.5.5)
     net-imap (0.3.7)
       date
       net-protocol
@@ -227,7 +231,7 @@ DEPENDENCIES
   mysql2 (= 0.5.5)
   newrelic_rpm (= 9.3.1)
   nokogiri (= 1.15.4)
-  pg (= 1.5.3)
+  pg (~> 1.5, >= 1.5.3)
   psych (= 5.1.0)
   puma (= 6.3.0)
   racc

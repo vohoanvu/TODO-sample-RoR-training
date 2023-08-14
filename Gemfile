@@ -6,6 +6,7 @@ end
 source 'https://rubygems.org'
 
 gem 'rails', '~> 6.1'
+gem 'pg', '1.5.3'
 gem 'webrick', '~> 1.7'
 gem 'rgeo-activerecord', '7.0.1'
 # gem 'kgio', '2.11.4'
@@ -39,7 +40,6 @@ platform :ruby do
 end
 
 platform :ruby, :mswin, :mingw, :x64_mingw do
-  gem 'pg', '1.5.3'
   gem 'sqlite3', '1.6.3'
 end
 

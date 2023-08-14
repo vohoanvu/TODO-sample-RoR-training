@@ -36,7 +36,6 @@ gem 'json', '2.6.3'
 gem 'minitest'
 gem 'psych', '5.1.0'
 gem 'racc'
-gem 'rubysl', '~> 3.1'
 gem 'rubysl-test-unit', :require => false
 
 # Bundle gems for the local environment. Make sure to

@@ -16,8 +16,6 @@ jobs:
           ruby-version: 3.1.2
       - name: Install dependencies
         run: bundle install
-      - name: Install libyaml-devel
-        run: sudo apt-get install -y libyaml-devel
   deploy:
     needs: build
     runs-on: ubuntu-latest

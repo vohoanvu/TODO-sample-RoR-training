@@ -9,8 +9,8 @@ gem 'rails', '~> 6.1'
 gem 'pg', '~> 1.5', '>= 1.5.3'
 gem 'webrick', '~> 1.7'
 gem 'rgeo-activerecord', '7.0.1'
-# gem 'kgio', '2.11.4'
-# gem 'raindrops', '0.20.1'
+gem 'kgio', '2.11.4'
+gem 'raindrops', '0.20.1'
 gem 'stringio', '3.0.8'
 gem 'nokogiri', '1.15.4'
 gem 'rgeo', '3.0.0'
@@ -27,7 +27,6 @@ gem 'coffee-rails'
 gem 'uglifier'
 
 platform :ruby do
-  gem 'mysql2', '0.5.5'
   gem 'activerecord-postgis-adapter', '7.1.1'
 
   gem 'newrelic_rpm', '9.3.1'

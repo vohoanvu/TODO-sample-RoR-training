@@ -101,7 +101,6 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.19.0)
-    mysql2 (0.5.5)
     net-imap (0.3.7)
       date
       net-protocol
@@ -227,8 +226,8 @@ DEPENDENCIES
   jquery-rails
   jruby-openssl
   json (= 2.6.3)
+  kgio (= 2.11.4)
   minitest
-  mysql2 (= 0.5.5)
   newrelic_rpm (= 9.3.1)
   nokogiri (= 1.15.4)
   pg (~> 1.5, >= 1.5.3)
@@ -237,6 +236,7 @@ DEPENDENCIES
   racc
   rails (~> 6.1)
   rails_autolink
+  raindrops (= 0.20.1)
   rgeo (= 3.0.0)
   rgeo-activerecord (= 7.0.1)
   rubysl (~> 3.1)

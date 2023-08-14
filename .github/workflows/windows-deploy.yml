@@ -16,6 +16,8 @@ jobs:
           ruby-version: 3.1.2
       - name: Install dependencies
         run: bundle install
+      - name: Install libyaml-devel
+        run: sudo apt-get install -y libyaml-devel
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -47,8 +49,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: todotest 
-          environment_name: Todotest-env
+          application_name: tododefault
+          environment_name: Tododefault-env
           version_label: ${{ github.sha }}
           deployment_package: todoapp.zip # Replace with the filename of your deployment package.
           region: us-east-1

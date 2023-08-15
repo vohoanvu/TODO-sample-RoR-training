@@ -36,7 +36,7 @@ platform :ruby do
   gem 'puma', '6.3.0'
   gem 'json', '2.6.3'
   gem 'minitest'
-  gem 'psych', '5.1.0'
+  gem 'psych', '5.0.0'
   gem 'racc'
 end
 

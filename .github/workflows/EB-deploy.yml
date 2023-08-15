@@ -35,6 +35,10 @@ jobs:
         run: bundle install --without development test
       - name: Precompile assets
         run: bundle exec rake assets:precompile RAILS_ENV=production
+      - name: Load DB schema and migrate DB
+        run: |
+          bundle exec rake db:schema:load RAILS_ENV=production
+          bundle exec rake db:migrate RAILS_ENV=production
       - name: Create deployment package
         run: |
           zip -r todoapp.zip . -x '*.git*'

@@ -35,10 +35,6 @@ jobs:
         run: bundle install --without development test
       - name: Precompile assets
         run: bundle exec rake assets:precompile RAILS_ENV=production
-      - name: Load DB schema and migrate DB
-        run: |
-          bundle exec rake db:schema:load RAILS_ENV=production
-          bundle exec rake db:migrate RAILS_ENV=production
       - name: Create deployment package
         run: |
           zip -r todoapp.zip . -x '*.git*'
@@ -64,4 +60,5 @@ jobs:
           environment_name: Tododefault-env
           version_label: ${{ github.sha }}
           deployment_package: todoapp.zip # Replace with the filename of your deployment package.
+          use_existing_version_if_available: true
           region: us-east-1

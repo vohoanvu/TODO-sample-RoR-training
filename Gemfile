@@ -6,7 +6,7 @@ end
 source 'https://rubygems.org'
 
 gem 'rails', '~> 6.1'
-gem 'pg', '1.2.3'
+gem 'pg', '1.5.3'
 gem 'webrick', '~> 1.7'
 gem 'rgeo-activerecord', '7.0.1'
 gem 'kgio', '2.11.4'

@@ -46,19 +46,19 @@ jobs:
           aws-region: us-east-1
       - name: Upload deployment package to S3
         run: |
-          aws s3 cp todoapp.zip s3://elasticbeanstalk-us-east-1-225574881592/todoapp.zip
+          aws s3 cp todoapp.zip s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/todoapp.zip
       - name: Create and upload version manifest file to S3
         run: |
           echo "{\"version_label\":\"${{ github.sha }}\",\"deployment_package\":\"todoapp.zip\"}" > version-manifest.json
-          aws s3 cp version-manifest.json s3://elasticbeanstalk-us-east-1-225574881592/version-manifest.json --content-type application/json --acl public-read-write --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --expires 0
+          aws s3 cp version-manifest.json s3://elasticbeanstalk-us-east-1-225574881592/.elasticbeanstalk/version-manifest.json --content-type application/json --acl public-read-write --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --expires 0
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v14
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: tododefault
-          environment_name: Tododefault-env
+          application_name: RubyOnRailsDemo
+          environment_name: RubyOnRailsDemo-env
           version_label: ${{ github.sha }}
-          deployment_package: todoapp.zip # Replace with the filename of your deployment package.
+          deployment_package: todoapp.zip
           use_existing_version_if_available: true
           region: us-east-1

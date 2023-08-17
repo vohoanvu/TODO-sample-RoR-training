@@ -12,17 +12,20 @@
 
 ActiveRecord::Schema.define(version: 2011_06_13_204114) do
 
-  create_table "lists", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "lists", id: :serial, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tasks", force: :cascade do |t|
+  create_table "tasks", id: :serial, force: :cascade do |t|
     t.string "name"
     t.boolean "done"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer "list_id"
   end
 

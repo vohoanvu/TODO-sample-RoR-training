@@ -186,7 +186,6 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3)
       mini_portile2 (~> 2.8.0)
-    stringio (3.0.8)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
@@ -242,7 +241,6 @@ DEPENDENCIES
   sass-rails
   simple_form
   sqlite3 (= 1.6.3)
-  stringio (= 3.0.8)
   trinidad
   tzinfo-data
   uglifier

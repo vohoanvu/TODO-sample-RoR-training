@@ -26,11 +26,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.2
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get upgrade
-          sudo apt-get install -y build-essential ruby-dev
       - name: Install dependencies
         run: bundle install
       - name: Precompile assets
@@ -56,8 +51,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: RubyOnRailsDemo
-          environment_name: RubyOnRailsDemo-env
+          application_name: vutodo-1
+          environment_name: Vutodo-1-env
           version_label: ${{ github.sha }}
           deployment_package: todoapp.zip
           use_existing_version_if_available: true
